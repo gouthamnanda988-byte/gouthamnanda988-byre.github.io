@@ -2,121 +2,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goutham | Portfolio</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#0b1120;color:#f1f5f9;line-height:1.7}
-nav{position:sticky;top:0;background:#111827;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-nav h2{color:#60a5fa}
-nav a{color:white;text-decoration:none;margin-left:15px}
-section{padding:70px 10%;scroll-margin-top:70px}
-.hero{min-height:75vh;display:flex;flex-direction:column;justify-content:center}
-.blue{color:#60a5fa}
-h1{font-size:clamp(38px,7vw,64px);line-height:1.2;margin:16px 0}
-h2{font-size:30px;margin-bottom:22px}
-p{color:#cbd5e1;margin-bottom:16px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
-.btn{display:inline-block;padding:11px 20px;background:#3b82f6;color:white;text-decoration:none;border-radius:8px}
-.outline{background:transparent;border:1px solid #60a5fa}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#111c30;border:1px solid #29384f;border-radius:12px;padding:24px}
-.card h3{margin-bottom:10px}
-.skills{display:flex;flex-wrap:wrap;gap:10px}
-.skills span{background:#172b48;color:#bfdbfe;padding:8px 14px;border-radius:20px}
-a{color:#93c5fd}
-footer{text-align:center;padding:25px;background:#111827}
-@media(max-width:600px){nav{padding:15px 5%}nav a{margin-left:7px;font-size:14px}section{padding:50px 7%}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of K Goutham Nayak, B.Tech Computer Science Engineering student at IIITDM Kancheepuram.">
+    <title>K Goutham Nayak | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h2 {
+            color: #38bdf8;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 65px 8%;
+            scroll-margin-top: 20px;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #0f172a, #172554);
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        .secondary-button:hover {
+            background: #1e293b;
+        }
+
+        h2.section-title {
+            font-size: 30px;
+            color: #38bdf8;
+            margin-bottom: 25px;
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .skills-container,
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill,
+        .project-card {
+            background: #1e293b;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .skill:hover,
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .project-card a,
+        .contact-links a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .project-card a:hover,
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 700px;
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #111827;
+            color: #94a3b8;
+            border-top: 1px solid #334155;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+
+            .hero {
+                min-height: 65vh;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<nav>
-<h2>Goutham.</h2>
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+    <header>
+        <h2>Goutham's Portfolio</h2>
 
-<section class="hero">
-<p class="blue">HELLO, WELCOME TO MY PORTFOLIO</p>
-<h1>I'm Goutham<br><span class="blue">Student & Developer</span></h1>
-<p>I am a B.Tech student passionate about programming,
-technology and solving real-world problems. I enjoy
-learning new skills and building practical projects.</p>
-<div class="buttons">
-<a class="btn" href="#projects">Explore Projects</a>
-<a class="btn outline" href="#contact">Contact Me</a>
-</div>
-</section>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<section id="about">
-<h2 class="blue">About Me</h2>
-<p>I am pursuing B.Tech at IIITDM Kancheepuram.
-I am developing my technical skills through coursework,
-personal projects and hands-on learning. I am interested
-in internship opportunities where I can learn and contribute.</p>
-<div class="card">
-<h3>Education</h3>
-<p>Degree: B.Tech</p>
-<p>Institute: IIITDM Kancheepuram</p>
-<p>Branch: Update with your exact branch</p>
-</div>
-</section>
+    <main>
+        <section class="hero" id="home">
+            <h1>Hello, I'm <span>K Goutham Nayak</span></h1>
 
-<section id="skills">
-<h2 class="blue">Technical Skills</h2>
-<div class="skills">
-<span>C Programming</span>
-<span>Python</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>SQL</span>
-<span>Git & GitHub</span>
-</div>
-<p style="margin-top:20px">I continue to improve my programming,
-problem-solving and development skills.</p>
-</section>
+            <p>
+                A B.Tech Computer Science Engineering student at
+                IIITDM Kancheepuram, interested in programming,
+                web development, and data science.
+            </p>
 
-<section id="projects">
-<h2 class="blue">My Projects</h2>
-<div class="cards">
-<div class="card">
-<h3>Smart Trip Planning</h3>
-<p>A travel planning project designed to estimate trip
-budgets and compare travel options.</p>
-<a href="https://github.com/gouthamnanda988-byte">View GitHub →</a>
-</div>
-<div class="card">
-<h3>Academic Project</h3>
-<p>Add your project problem statement, technologies used,
-features and what you learned.</p>
-<a href="https://github.com/gouthamnanda988-byte">View GitHub →</a>
-</div>
-<div class="card">
-<h3>Data Science Project</h3>
-<p>Add your image-based machine learning or data science
-project here when it is ready.</p>
-<a href="https://github.com/gouthamnanda988-byte">View GitHub →</a>
-</div>
-</div>
-</section>
+            <div>
+                <a href="#projects" class="button">View My Projects</a>
+                <a href="#contact" class="button secondary-button">Contact Me</a>
+            </div>
+        </section>
 
-<section id="contact">
-<h2 class="blue">Contact Me</h2>
-<p>Email: Add your professional email address</p>
-<p>GitHub: <a href="https://github.com/gouthamnanda988-byte">My GitHub Profile</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/">Add your LinkedIn profile URL</a></p>
-</section>
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
 
-<footer>
-<p>© 2026 Goutham | Personal Portfolio</p>
-</footer>
+            <p class="about-text">
+                I am a Computer Science Engineering student at
+                IIITDM Kancheepuram. I am developing my skills in
+                programming, web technologies, and problem-solving.
+                I enjoy learning new technologies and applying my
+                knowledge to practical projects. My goal is to gain
+                industry experience through internships and build
+                useful software applications.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">My Skills</h2>
+
+            <div class="skills-container">
+                <div class="skill">C Programming</div>
+                <div class="skill">Python</div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Git & GitHub</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+
+            <div class="projects-container">
+
+                <div class="project-card">
+                    <h3>Smart Trip Planning</h3>
+                    <p>
+                        A travel-planning project designed to estimate
+                        trip expenses, compare travel options, calculate
+                        routes, and help users plan within a budget.
+                    </p>
+                    <a href="https://github.com/gouthamnanda988-byte"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub Profile →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3>TouristSafe</h3>
+                    <p>
+                        A travel-related project focused on helping
+                        tourists access useful information and improve
+                        their travel-planning experience.
+                    </p>
+                    <a href="https://github.com/gouthamnanda988-byte"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub Profile →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Dog Breed Identification</h3>
+                    <p>
+                        A proposed image-based machine learning project
+                        to identify dog breeds from images.
+                    </p>
+                    <a href="https://github.com/gouthamnanda988-byte"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub Profile →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="contact-box">
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:gouthamnanda988@gmail.com"
+                       class="contact-links">
+                        gouthamnanda988@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/gouthamnanda988-byte"
+                       target="_blank" rel="noopener noreferrer">
+                        github.com/gouthamnanda988-byte
+                    </a>
+                </p>
+
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com/in/goutham-nanda-6a8b06360/"
+                       target="_blank" rel="noopener noreferrer">
+                        Visit My LinkedIn Profile
+                    </a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 K Goutham Nayak | Personal Portfolio</p>
+    </footer>
 
 </body>
 </html>
